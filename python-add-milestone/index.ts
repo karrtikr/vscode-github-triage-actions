@@ -17,6 +17,7 @@ class PythonAddMilestoneAction extends Action {
 
 const enrollIssue = async (issue: GitHubIssue) => {
 	const closingHash = (await issue.getClosingInfo())?.hash;
+    console.log('Closing hash', closingHash);
 	if (closingHash) {
 		// Get the milestone linked to the current release and set it if the issue doesn't have one
 		const releaseMilestone = (await issue.getIssue()).milestone
