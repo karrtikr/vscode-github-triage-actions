@@ -1,0 +1,9 @@
+name: Add milestone
+description: Add milestone to issues closed during iteration
+inputs:
+  token:
+    description: GitHub token with issue, comment, and label read/write permissions
+    default: ${{ github.token }}
+runs:
+  using: 'node16'
+  main: 'index.js'
